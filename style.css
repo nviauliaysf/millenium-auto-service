@@ -1,0 +1,285 @@
+/* =========================================
+   STYLE.CSS MILLENIUM AUTO SERVICE (UPDATED)
+   ========================================= */
+
+:root {
+    --primary: #0D47A1;       /* Biru Navy Tua */
+    --primary-light: #1976D2; /* Biru Terang */
+    --primary-fade: #E3F2FD;  /* Biru Sangat Pudar */
+    --bg-dark: #1E293B;       
+    --text-main: #334155;     
+    --text-light: #64748B;    
+    --white: #FFFFFF;
+    --success: #10B981;
+    --danger: #EF4444;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* { 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+/* BACKGROUND GLOBAL (Coba ganti warna di sini) */
+/* BACKGROUND GLOBAL DENGAN FOTO */
+/* BACKGROUND GLOBAL (FOTO) */
+body {
+    /* 1. Set Foto sebagai Background */
+    background-image: url("assets/bg.jpeg");
+    background-size: cover;        /* Foto menutupi layar penuh */
+    background-position: center;   /* Foto di tengah */
+    background-attachment: fixed; /* Foto tetap diam saat scroll */
+    background-repeat: no-repeat;
+    
+    /* 2. Warna Teks Utama */
+    color: #334155;
+    
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh;
+}
+.glass-panel {
+    background: rgba(255, 255, 255, 0.9); /* Putih transparan 90% */
+    backdrop-filter: blur(10px);            /* Efek buram di belakang teks */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* NAVBAR */
+.navbar {
+    background: var(--bg-dark); 
+    color: white; 
+    padding: 15px 0;
+    border-bottom: 5px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.brand a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    display: flex; align-items: center; gap: 10px;
+}
+
+/* STYLE KHUSUS LAYANAN UNGGULAN */
+.layanan-unggulan-section {
+    /* Background Gelap sesuai deskripsi */
+    background-color: #111827; 
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.container-lu {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.judul-unggulan {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+/* Garis bawah dekoratif */
+.judul-unggulan::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #0D47A1; /* Warna aksen biru */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.grid-kartu {
+    display: grid;
+    /* Responsif: otomatis jadi 1 kolom di HP, 3 kolom di PC */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.kartu {
+    /* Kartu Putih sesuai deskripsi */
+    background: white;
+    color: #333;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    
+    /* Efek bayangan agar melayang */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek Hover saat mouse diarahkan */
+.kartu:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.icon-box {
+    font-size: 3.5rem; /* Ukuran icon besar */
+    margin-bottom: 20px;
+    color: #0D47A1; /* Warna icon */
+}
+
+.kartu h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.kartu p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.nav-links { list-style: none; display: flex; gap: 20px; align-items: center; }
+.nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: #020a79; }
+
+/* CONTAINER UTAMA */
+.wrapper { 
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 30px; 
+    background: var(--white); 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow); 
+    position: relative; 
+    z-index: 1; 
+    flex: 1; /* Agar footer selalu di bawah */
+}
+
+/* FORMS & INPUTS */
+input, select, textarea { 
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 15px; 
+    border: 1px solid #CBD5E1; 
+    border-radius: 8px; 
+    font-size: 1rem; 
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus { 
+    border-color: var(--primary); 
+    outline: none; 
+    box-shadow: 0 0 0 3px var(--primary-fade); 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 6px; 
+    font-weight: 600; 
+    color: var(--text-main); 
+    font-size: 0.95rem;
+}
+
+/* BUTTONS */
+.btn { 
+    display: inline-block; 
+    padding: 12px 24px; 
+    background: var(--primary); 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    font-weight: 600; 
+    text-align: center;
+}
+
+.btn:hover { 
+    background: var(--primary-light); 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+}
+
+.btn-secondary { background: #94A3B8; }
+.btn-secondary:hover { background: #64748B; }
+
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { background: #DC2626; }
+
+.btn-success { background: var(--success); }
+.btn-success:hover { background: #059669; }
+
+/* TABLES */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+    background: white; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: var(--shadow);
+}
+
+th, td { 
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 1px solid #E2E8F0; 
+}
+
+th { 
+    background: var(--primary); 
+    color: white; 
+    font-weight: 600;
+}
+
+tr:hover { background: var(--primary-fade); }
+
+/* ALERTS / NOTIFIKASI */
+.alert { 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    font-weight: 500;
+}
+
+.alert-success { 
+    background: #D1FAE5; 
+    color: #065F46; 
+    border: 1px solid #6EE7B7; 
+}
+
+.alert-error { 
+    background: #FEE2E2; 
+    color: #991B1B; 
+    border: 1px solid #FCA5A5; 
+}
+
+/* FOOTER */
+.site-footer { 
+    background: var(--bg-dark); 
+    color: white; 
+    text-align: center; 
+    padding: 25px 0; 
+    margin-top: 40px; 
+    border-top: 5px solid var(--primary);
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+    .wrapper { margin: 20px 10px; padding: 20px; }
+}

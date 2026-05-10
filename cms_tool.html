@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMS Simulator</title>
+    <style>
+        body { font-family: sans-serif; display: flex; height: 100vh; margin: 0; }
+        .left { flex: 1; padding: 20px; background: #f0f4f8; overflow-y: auto; }
+        .right { flex: 1; background: #1e1e1e; color: #d4d4d4; padding: 20px; font-family: monospace; overflow-y: auto; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
+        button { background: #0D47A1; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h2>🛠️ CMS Visual Editor</h2>
+        <p>Ubah teks di bawah, kode PHP di kanan akan otomatis berubah.</p>
+        
+        <div class="card">
+            <h3>Edit Hero Section</h3>
+            <label>Judul:</label>
+            <input type="text" id="heroTitle" value="Servis Mobil Profesional" oninput="updateCode()">
+            <label>Deskripsi:</label>
+            <textarea id="heroDesc" oninput="updateCode()">Solusi terbaik kendaraan Anda.</textarea>
+        </div>
+    </div>
+    
+    <div class="right">
+        <h3>Generated PHP Code:</h3>
+        <pre id="codeOutput">
+&lt;?php
+// Ambil dari database
+ $hero_title = "&lt;?= $data['hero_title'] ?? '' ?&gt;";
+ $hero_desc = "&lt;?= $data['hero_desc'] ?? '' ?&gt;";
+?&gt;
+
+&lt;section class="hero"&gt;
+    &lt;h1&gt;&lt;?= $hero_title ?&gt;&lt;/h1&gt;
+    &lt;p&gt;&lt;?= $hero_desc ?&gt;&lt;/p&gt;
+&lt;/section&gt;
+        </pre>
+    </div>
+
+    <script>
+        function updateCode() {
+            const title = document.getElementById('heroTitle').value;
+            const desc = document.getElementById('heroDesc').value;
+            // Simulasi update kode (hanya visual)
+            console.log("Code updated for:", title);
+        }
+    </script>
+</body>
+</html>
